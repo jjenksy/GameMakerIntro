@@ -5,9 +5,31 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\defaultButton1</sprite>
+    <sprite>sprites\moonButton</sprite>
+    <sprite>sprites\moonButtonHover</sprite>
+    <sprite>sprites\buttonHover1</sprite>
+    <sprite>sprites\saturnButton</sprite>
+    <sprite>sprites\saturnButtonHover</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\earth</background>
+    <background>background\moon</background>
+    <background>background\saturn</background>
+  </backgrounds>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\defaultButton1Obj</object>
+    <object>objects\moonButtonObj</object>
+    <object>objects\saturnButtonObj</object>
+    <object>objects\objFade</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\moonRoom</room>
+    <room>rooms\earthRoom</room>
+    <room>rooms\saturnRoom</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
