@@ -6,26 +6,29 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\ufoShip</sprite>
-    <sprite>sprites\asteroid</sprite>
-    <sprite>sprites\button</sprite>
-    <sprite>sprites\buttonMouseOver</sprite>
+    <sprite>sprites\mainChar</sprite>
+    <sprite>sprites\exitSign</sprite>
+    <sprite>sprites\door</sprite>
+    <sprite>sprites\skull</sprite>
+    <sprite>sprites\help</sprite>
+    <sprite>sprites\wall</sprite>
+    <sprite>sprites\wallCracked</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
-    <background>background\background1</background>
-    <background>background\background2</background>
-    <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\spaceship</object>
-    <object>objects\asteroid1</object>
-    <object>objects\buttonObj</object>
+    <object>objects\mainCharObj</object>
+    <object>objects\exitSignOBJ</object>
+    <object>objects\doorOBJ</object>
+    <object>objects\skullObj</object>
+    <object>objects\helpObj</object>
+    <object>objects\wallObj</object>
+    <object>objects\wallCrackedObj</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
-    <room>rooms\room2</room>
+    <room>rooms\mainRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
