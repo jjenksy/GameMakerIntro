@@ -14,6 +14,7 @@
     <sprite>sprites\button</sprite>
     <sprite>sprites\buttonMouseOver</sprite>
     <sprite>sprites\wall</sprite>
+    <sprite>sprites\title</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -22,13 +23,16 @@
     <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\spaceship</object>
     <object>objects\asteroid1</object>
     <object>objects\buttonObj</object>
     <object>objects\wallOBG</object>
+    <object>objects\obj_titleBlink</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_title</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
     <room>rooms\room3</room>
