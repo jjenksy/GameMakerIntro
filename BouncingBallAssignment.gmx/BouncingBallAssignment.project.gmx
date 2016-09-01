@@ -7,6 +7,8 @@
   <sounds name="sound">
     <sound>sound\bounce</sound>
     <sound>sound\destroy</sound>
+    <sound>sound\IntroMusic</sound>
+    <sound>sound\gameBackground</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\soccerBall</sprite>
@@ -14,9 +16,13 @@
     <sprite>sprites\paddle</sprite>
     <sprite>sprites\wall</sprite>
     <sprite>sprites\spike</sprite>
+    <sprite>sprites\continueButton</sprite>
+    <sprite>sprites\ContinueButtonHover</sprite>
+    <sprite>sprites\BouncingBallsBlink</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\mainScreen</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -25,8 +31,11 @@
     <object>objects\wallObj</object>
     <object>objects\soikeObj</object>
     <object>objects\paddleObj</object>
+    <object>objects\ContinueButtonObj</object>
+    <object>objects\BouncingBallsObj</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\titleScreen</room>
     <room>rooms\gameRoom</room>
   </rooms>
   <help>

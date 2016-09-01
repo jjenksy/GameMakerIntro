@@ -1,0 +1,8 @@
+//create my initail variables
+time = 0;
+increase = 1;
+
+//This function is used to align text along the horizontal axis and changing
+// the horizontal alignment will change the position and
+// direction in which all further text is drawn with the default value being fa_left
+draw_set_halign(fa_center)

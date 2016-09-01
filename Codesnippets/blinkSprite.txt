@@ -1,0 +1,15 @@
+//increase values
+time += increase;
+
+//calculations
+if(time >= 25 || time <= 0){increase = -increase}
+
+//set the transperancy to the return value from lerp
+draw_set_alpha(lerp(0,1,time/25))
+//draw the sprite with
+//first arg is sprite 
+//second arg is the subimg 0 for none
+//3rd and 4th arg is for the x and y location
+draw_sprite(BouncingBallsBlink,0,0,0)
+//sets the transparency to fully transparent
+draw_set_alpha(1)
