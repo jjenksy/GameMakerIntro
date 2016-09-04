@@ -12,17 +12,26 @@
     <sprite>sprites\spr_manBack</sprite>
     <sprite>sprites\spr_Daimond1</sprite>
     <sprite>sprites\spr_CastleWall</sprite>
+    <sprite>sprites\spr_spawner</sprite>
+    <sprite>sprites\spr_Continue</sprite>
+    <sprite>sprites\spr_continueHover</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
+  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\obj_Man</object>
     <object>objects\obj_daimod</object>
     <object>objects\obj_spawner</object>
     <object>objects\obj_castleWall</object>
+    <object>objects\obj_continue</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\gameRoom</room>
+    <room>rooms\rm_TitleScreen</room>
+    <room>rooms\rm_gameRoom</room>
+    <room>rooms\rm_GameOver</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
