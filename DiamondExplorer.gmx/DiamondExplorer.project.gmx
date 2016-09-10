@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\spawner</sound>
+    <sound>sound\snd_bounce</sound>
+    <sound>sound\snd_collect</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Man</sprite>
     <sprite>sprites\spr_ManLeft</sprite>
@@ -15,18 +19,26 @@
     <sprite>sprites\spr_spawner</sprite>
     <sprite>sprites\spr_Continue</sprite>
     <sprite>sprites\spr_continueHover</sprite>
+    <sprite>sprites\spr_DETitle</sprite>
+    <sprite>sprites\spr_DETile</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\bg_title</background>
   </backgrounds>
   <paths name="paths"/>
-  <shaders name="shaders"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_GameOverSmall</font>
+    <font>fonts\fnt_GameOverLarge</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_Man</object>
     <object>objects\obj_daimod</object>
     <object>objects\obj_spawner</object>
     <object>objects\obj_castleWall</object>
     <object>objects\obj_continue</object>
+    <object>objects\obj_DETitle</object>
+    <object>objects\obj_GameOver</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_TitleScreen</room>
