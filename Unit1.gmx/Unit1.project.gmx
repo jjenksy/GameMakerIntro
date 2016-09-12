@@ -23,7 +23,6 @@
     <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\spaceship</object>
     <object>objects\asteroid1</object>
