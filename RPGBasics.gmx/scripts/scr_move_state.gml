@@ -1,11 +1,16 @@
 ///scr_move_state
 scr_get_input();
 //if dash key is pressed set the state = to the dash_state
-//todo add the leave dash state ability
+
 if(dash_key){
     state = scr_dash_state;
     //sets an alarm so dash will time out
     alarm[0] = room_speed/4;
+}
+if(attack_key){
+    image_index = 0;
+    state = scr_attack_state;
+    
 }
 
 dir = point_direction(0,0,xaxis,yaxis);

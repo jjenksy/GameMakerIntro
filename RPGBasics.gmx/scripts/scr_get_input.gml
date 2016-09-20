@@ -4,6 +4,7 @@ right_key = keyboard_check(vk_right)
 left_key = keyboard_check(vk_left);
 up_key =keyboard_check(vk_up);
 dash_key = keyboard_check_pressed(ord('C'));
+attack_key = keyboard_check_pressed(ord('X'));
 //set up for controller and keyboard
 //get the axis
 //left key is one and right key is one so if both are pressed then == 0
@@ -26,5 +27,6 @@ if(gamepad_is_connected(0)){
    yaxis = gamepad_axis_value(0,gp_axislv);
    //Returns whether a given gamepad button has been pressed
    dash_key = gamepad_button_check_pressed(0,gp_face1);
+   attack_key = gamepad_button_check_pressed(0,gp_face3);
  
 }
