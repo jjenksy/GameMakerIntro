@@ -28,6 +28,7 @@
             <string>///init Vars
 ///Set fixed rotation
 phy_fixed_rotation = true;
+hp = 3;
 </string>
           </argument>
         </arguments>
@@ -53,12 +54,18 @@ phy_fixed_rotation = true;
             <string>///Control depth
 //this insures that lower obj will draw on top
 depth =-y;
+
+if(hp&lt;=0){
+    
+instance_destroy();
+
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_life_form_parent">
+    <event eventtype="4" ename="obj_wall">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -81,7 +88,7 @@ depth =-y;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_wall">
+    <event eventtype="4" ename="obj_life_form_parent">
       <action>
         <libid>1</libid>
         <id>603</id>

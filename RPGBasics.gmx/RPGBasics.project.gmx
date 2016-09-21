@@ -19,6 +19,7 @@
       <sprite>sprites\spr_player_shadow</sprite>
       <sprite>sprites\spr_player_down</sprite>
     </sprites>
+    <sprite>sprites\spr_damage</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -31,6 +32,7 @@
     <script>scripts\scr_move_state_OLD.gml</script>
     <script>scripts\scr_frozen_state.gml</script>
     <script>scripts\scr_attack_state.gml</script>
+    <script>scripts\scr_get_face.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_life_form_parent</object>
@@ -39,6 +41,7 @@
     <object>objects\obj_view</object>
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_damage</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>

@@ -21,6 +21,7 @@ if(xaxis == 0 && yaxis == 0){
     len = 0;
 }else{
     len = spd;
+    scr_get_face();
 }
 //get the hspd and vspd GML function that converts lenght and direction in horizatol speed
 //this fixes the bug of going to fast when walking at diagonal
@@ -36,21 +37,21 @@ image_speed = .2;
 if(len == 0){
     image_index = 0;
 }
-//Vertical sprites
-if(vspd > 0){ 
-// greater then 0 moving up
-    sprite_index = spr_player_down;
-}else if (vspd < 0){
-// less then 0 moving down
-sprite_index = spr_player_up
-}
-//Horizontal Sprite
-if(hspd > 0){
-//if greater then 0 move right across the x-axis to the right
-    sprite_index = spr_player_right;
-}else if(hspd<0){
-//opposite of above
-    sprite_index =spr_player_left;
-}
 
+    switch(face){
+        case RIGHT:
+        sprite_index = spr_player_right;
+        break;
+        case UP:
+        sprite_index = spr_player_up;
+        break;
+        case LEFT:
+        sprite_index = spr_player_left;
+        break;
+        case DOWN:
+        sprite_index = spr_player_down;
+        break;    
+    
+    
+    }
 

@@ -18,4 +18,40 @@ switch(sprite_index){
         break;
     
 }
+if(image_index >=3 && attacked == false){
+    var xx =0;
+    var yy =0;
+
+   
+    //show_debug_message(sprite_index);
+    //show_debug_message(spr_player_attack_down);
+      switch(sprite_index){
+        case spr_player_attack_down:
+            xx=x;
+            yy=y+14;
+            break;
+                
+        case spr_player_attack_up:
+            xx=x;
+            yy=y-10;
+            break;
+                
+        case spr_player_attack_right:
+            xx=x+12;
+            yy=y+2;
+            break;
+                
+        case spr_player_attack_left:
+            xx=x-12;
+            yy=y+2;
+            break;
+        
+    }
+    //show_debug_message(xx);
+   // show_debug_message(yy);
+
+    var damage = instance_create(xx,yy,obj_damage);
+    damage.creator = id;
+    attacked = true;
+}
 
