@@ -20,19 +20,33 @@
       <sprite>sprites\spr_player_down</sprite>
     </sprites>
     <sprite>sprites\spr_damage</sprite>
+    <sprite>sprites\spr_expr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_get_input.gml</script>
-    <script>scripts\scr_move_state.gml</script>
-    <script>scripts\scr_dash_state.gml</script>
-    <script>scripts\scr_move_state_OLD.gml</script>
-    <script>scripts\scr_frozen_state.gml</script>
-    <script>scripts\scr_attack_state.gml</script>
-    <script>scripts\scr_get_face.gml</script>
+    <scripts name="helper_script">
+      <script>scripts\scr_get_input.gml</script>
+      <script>scripts\scr_get_face.gml</script>
+    </scripts>
+    <scripts name="enemy_state">
+      <script>scripts\scr_enemy_idle_state.gml</script>
+      <script>scripts\scr_enemy_wander_state.gml</script>
+      <script>scripts\scr_enemy_chase_state.gml</script>
+      <scripts name="enemy_helper_scripts">
+        <script>scripts\scr_check_for_player.gml</script>
+        <script>scripts\scr_enemy_choose_next_state.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="playerStates">
+      <script>scripts\scr_frozen_state.gml</script>
+      <script>scripts\scr_attack_state.gml</script>
+      <script>scripts\scr_move_state_OLD.gml</script>
+      <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_dash_state.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_life_form_parent</object>
@@ -42,6 +56,8 @@
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_slime</object>
     <object>objects\obj_damage</object>
+    <object>objects\obj_expr</object>
+    <object>objects\obj_player_stats</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>

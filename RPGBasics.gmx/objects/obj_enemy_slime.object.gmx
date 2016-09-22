@@ -30,8 +30,38 @@
 event_inherited();
 image_speed = .1;
 spd = .25;
+//enemy ai...kinda
+state = scr_enemy_idle_state;
+alarm[0] = room_speed*irandom_range(2,5);
+sight = 64;
+targetx = 0;
+targety = 0;
 
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Wander alarm
 </string>
           </argument>
         </arguments>
@@ -54,15 +84,13 @@ spd = .25;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move towards the player
-//sign returns the + or -1 
-//obj_player.x or y returns the players x and y pos the minus the curret obj pos
+            <string>///run the current state
+
 //check to see if the player is in the room first
 event_inherited();
-if(instance_exists(obj_player)){
-phy_position_x += sign(obj_player.x -x)*spd;
-phy_position_y += sign(obj_player.y -y)*spd;
-}
+
+//run the chase state
+script_execute(state);
 
 </string>
           </argument>
