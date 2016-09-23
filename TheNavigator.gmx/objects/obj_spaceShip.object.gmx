@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//sets up the initial particle system for the fire emmitor in a creation event
+            <string>///Init for spaceship
+//sets up the initial particle system for the fire emmitor in a creation event
 // need to be paired with a call to the below code in a step event or whatever event I need
 //gets the current positon of the sprite and sets up the particle emmiter region to that porsition and calls burst
  
@@ -36,7 +37,18 @@
  //part_emitter_region(rocket_first_particle, rocket_first_emitter, x+20,x+20,y+100,y+100,0,0);
   //part_emitter_burst(rocket_first_particle,rocket_first_emitter,fire_particle,5);
 
+  //call my getInput scr
+  scr_get_input();
   
+  //set my spaceships state
+  state = scr_spaceship_movement;
+//beggining x and y pos  
+xx = x;
+yy = y;
+
+gravity_direction = 270;
+
+
 fire_particle = part_system_create();
 //uncomment to set the depth
 //part_system_depth(fire_particle,0);
@@ -87,6 +99,38 @@ rocket_first_emitter = part_emitter_create(rocket_first_particle);
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+
+//executes the current script in my state instance
+script_execute(state);
+///Get the room bounds move the ship back to start 
+// if go out of bounds
+if(room_height &gt; y){
+    x = xstart;
+   y = ystart;
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>401</id>
         <kind>0</kind>
         <userelative>-1</userelative>
@@ -96,7 +140,7 @@ rocket_first_emitter = part_emitter_create(rocket_first_particle);
         <functionname>action_if_empty</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
-        <relative>-1</relative>
+        <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
@@ -105,7 +149,7 @@ rocket_first_emitter = part_emitter_create(rocket_first_particle);
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -115,32 +159,8 @@ rocket_first_emitter = part_emitter_create(rocket_first_particle);
       </action>
       <action>
         <libid>1</libid>
-        <id>107</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_gravity</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>270</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0.1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>421</id>
-        <kind>3</kind>
+        <id>422</id>
+        <kind>1</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>0</useapplyto>
@@ -167,13 +187,93 @@ rocket_first_emitter = part_emitter_create(rocket_first_particle);
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>0</string>
+            <string>270</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>.9</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>421</id>
+        <kind>3</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>107</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_gravity</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>270</string>
           </argument>
           <argument>
             <kind>0</kind>
             <string>0</string>
           </argument>
         </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="4" ename="obj_endAndroid">
@@ -203,39 +303,13 @@ rocket_first_emitter = part_emitter_create(rocket_first_particle);
       </action>
       <action>
         <libid>1</libid>
-        <id>107</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_gravity</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="39">
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
@@ -243,40 +317,15 @@ rocket_first_emitter = part_emitter_create(rocket_first_particle);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>000001000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>3</string>
+            <string>///set the gravity
+
+gravity = 0;
+</string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="38">
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>000000010</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>5</string>
-          </argument>
-        </arguments>
-      </action>
+    <event eventtype="4" ename="obj_asteroid">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -293,125 +342,10 @@ rocket_first_emitter = part_emitter_create(rocket_first_particle);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//gets the current positon of the sprite and sets up the particle emmiter region to that porsition and calls burst
- 
- //current x and y location of the spaceship
-x = obj_spaceShip.x;
-y = obj_spaceShip.y;
- //set up the region added pixels to the x and x to try and get the correct positions on the sprite
- part_emitter_region(rocket_first_particle, rocket_first_emitter, x+20,x+20,y+100,y+100,0,0);
- 
+            <string>///set the gravity
 
-
-
-     part_emitter_burst(rocket_first_particle,rocket_first_emitter,fire_particle,5);
- 
-
+gravity = 0;
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="37">
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>000100000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>3</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="39">
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>000010000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="38">
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>000010000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="37">
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>000010000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -419,7 +353,7 @@ y = obj_spaceShip.y;
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectShape>2</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>

@@ -12,6 +12,10 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_spaceship_movement.gml</script>
+    <script>scripts\scr_get_input.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_GameOverLarge</font>
   </fonts>
@@ -21,6 +25,7 @@
     <object>objects\obj_asteroid</object>
     <object>objects\obj_endAndroid</object>
     <object>objects\obj_GameOver</object>
+    <object>objects\obj_parent_asteroid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
