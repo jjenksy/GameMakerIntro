@@ -95,9 +95,15 @@ state = scr_move_state;
 //move right
 //custom script for key input
 //runs the script assigned to state
-event_inherited();
+
 script_execute(state);
 
+//overide parent events
+depth =-y;
+
+if(obj_player_stats.hp&lt;=0){
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
