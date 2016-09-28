@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///init the Damage Obj
+event_inherited();
 damage =1;
 knockback =10;
 //creator of the damage is init no one
@@ -122,8 +123,9 @@ if(other.id != creator){
 //damage what you collide with
 
 if(other.id != creator){
-    other.hp-=damage;
+       other.hp-=damage;
     if(instance_exists(creator)){
+ 
     //apply the knockback
     var dir = point_direction(creator.x,creator.y,other.x,other.y);
     }

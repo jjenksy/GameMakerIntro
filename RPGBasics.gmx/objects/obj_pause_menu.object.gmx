@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,16 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Init the player stats
-hp = 5;
-maxhp = hp;
-stamina = 10;
-maxstamina = stamina;
-level = 1;
-expr = 0;
-maxexpr = 3;
-attack =1;
-draw_set_colour(c_white);
+            <string>///init the obj_pause
+title = "Game Paused";
+option[0] = "Return";
+option[1] = "Save";
+option[2] = "Load";
+option[3] = "Quit";
+
+//menu index this is the option we are on
+menu_index = 0;
+
+
 </string>
           </argument>
         </arguments>
@@ -57,7 +58,7 @@ draw_set_colour(c_white);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stamina regen alarm
+            <string>///alarm for menu control
 </string>
           </argument>
         </arguments>
@@ -80,16 +81,31 @@ draw_set_colour(c_white);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Control the stats
-//makes health not go negative
-if (hp&lt;0){
-    hp=0;
-
-}
-//stamina regen
-if(stamina &lt; maxstamina &amp;&amp; alarm[0]== -1){
-    stamina++;
-
+            <string>///Control the menu
+if(alarm[0]&lt;=0){
+    if(obj_input.down_key){
+    //checking to see if the menu_index is less then the total length of the array
+        if(menu_index&lt; array_length_1d(option)-1){
+            menu_index++;
+        }else{
+            menu_index=O;
+        }
+        alarm[0]=room_speed/6;
+        
+    }
+     if(obj_input.up_key){
+        if(menu_index&gt; 0){
+        menu_index--;
+     
+        
+        }else{
+        //loop back around
+        menu_index= array_length_1d(option)-1;
+        }
+        
+         alarm[0]=room_speed/6;
+     }
+    
 }
 </string>
           </argument>
@@ -113,12 +129,26 @@ if(stamina &lt; maxstamina &amp;&amp; alarm[0]== -1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the stats
-draw_text(32,16,"HP: "+string(hp) +"/"+ string(maxhp));
-draw_text(32,32,"Stamina: "+string(stamina) +"/"+ string(maxstamina));
-draw_text(32,42,"Level: " +string(level));
+            <string>///draw the menu
+var xx = display_get_gui_width()/2;
+var yy = display_get_gui_height()/2;
 
-///string(hp) +"/"+ string(maxhp)
+draw_set_halign(fa_center);
+
+draw_text(xx, yy-64,title);
+
+//loops through the array and draws the text
+for(var i = 0; i&lt;=array_length_1d(option)-1;i++){
+//draw menu as gray
+    draw_set_colour(c_gray);
+    if(i==menu_index){
+    //draw select as white
+        draw_set_colour(c_white);
+    }
+    draw_text(xx,yy+(i*32) , option[i]);
+}
+draw_set_colour(c_white);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>

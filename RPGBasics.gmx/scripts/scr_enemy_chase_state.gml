@@ -14,7 +14,9 @@ var vspd = lengthdir_y(spd,dir);
 //is positive, negative or neither and returns 1, -1, 0 
 //sets it to the xscale amount
 //This value sets the horizontal scaling applied to the sprite
-image_xscale = sign(hspd);
+ if(hspd!=0){
+    image_xscale = sign(hspd);
+}
 //This variable can be used to get (or to set) 
 //the x position of the instance within the game room physics world
 phy_position_x += hspd;

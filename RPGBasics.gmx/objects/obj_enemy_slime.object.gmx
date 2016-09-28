@@ -63,6 +63,14 @@ targety = 0;
             <kind>1</kind>
             <string>///Drop expr point
 instance_create(x,y,obj_expr);
+
+
+//drop random health pack
+if(scr_chance(.5)){
+    //creat the health drop in a random area around the slime
+    //hopefullt doesnt cover the experience up
+    instance_create(x+random_range(-6,6), y+random_range(-6,6), obj_health);
+}
 </string>
           </argument>
         </arguments>
