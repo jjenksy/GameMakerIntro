@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-10</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>obj_life_form_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -103,6 +103,83 @@ depth =-y;
 
 if(obj_player_stats.hp&lt;=0){
     instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///goto next room
+//if there is a room execute code
+if(room_exists(other.new_room)){
+    //goto the others(collision obj) new_room var
+    room_goto(other.new_room);
+    //x and y pos
+    x = other.new_x;
+    y = other.new_y;
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_expr">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///level up system
+
+with(other){
+    instance_destroy();
+}
+with(obj_player_stats){
+//add 1 to expr
+    expr +=1;
+    //if expr is greater then level up
+    if(expr &gt;= maxexpr){
+    level +=1;
+    expr = expr -maxexpr;
+    //takes double the expr every level
+    maxexpr *=2;
+    hp+=2;
+    maxhp +=2;
+    stamina +=2;
+    maxstamina +=2;
+    attack =1;
+    
+    
+    }
 }
 </string>
           </argument>

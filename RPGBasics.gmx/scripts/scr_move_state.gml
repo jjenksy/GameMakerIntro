@@ -2,10 +2,17 @@
 scr_get_input();
 //if dash key is pressed set the state = to the dash_state
 
-if(dash_key){
+//check if the dashkey is pressed and there is enough
+//stamina to dash
+if(dash_key && obj_player_stats.stamina >=DASH_COST){
+    
     state = scr_dash_state;
     //sets an alarm so dash will time out
     alarm[0] = room_speed/4;
+    //subract the dash_cost from current players stamina
+    obj_player_stats.stamina-=DASH_COST;
+    //set the dash regen alarm
+    obj_player_stats.alarm[0] = room_speed;
 }
 if(attack_key){
     image_index = 0;
