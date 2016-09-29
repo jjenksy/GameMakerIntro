@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_npc_right</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_enemy_slime</sprite>
     <sprites name="Player">
@@ -77,6 +78,7 @@
     </objects>
     <object>objects\obj_input</object>
     <object>objects\obj_pause_menu</object>
+    <object>objects\obj_npc</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
