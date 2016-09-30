@@ -26,6 +26,7 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_sign</sprite>
     <sprite>sprites\spr_dialog_box</sprite>
+    <sprite>sprites\spr_fireball</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -37,6 +38,8 @@
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_chance.gml</script>
       <script>scripts\scr_string_copy_words.gml</script>
+      <script>scripts\scr_load_game.gml</script>
+      <script>scripts\scr_save_game.gml</script>
     </scripts>
     <scripts name="enemy_state">
       <script>scripts\scr_enemy_idle_state.gml</script>
@@ -54,8 +57,8 @@
       <script>scripts\scr_move_state_OLD.gml</script>
       <script>scripts\scr_move_state.gml</script>
       <script>scripts\scr_dash_state.gml</script>
+      <script>scripts\scr_fireball.gml</script>
     </scripts>
-    <script>scripts\scr_save_game.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_life_form_parent</object>
@@ -79,6 +82,7 @@
     <object>objects\obj_input</object>
     <object>objects\obj_pause_menu</object>
     <object>objects\obj_npc</object>
+    <object>objects\obj_projectile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>

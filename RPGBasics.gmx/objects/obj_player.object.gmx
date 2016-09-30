@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-10</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>obj_life_form_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -34,10 +34,10 @@ vspd = 0;
 len = 0;
 dir = 0;
 attacked = false;
-hp = 4;
 //image speed
 image_speed = 0;
-
+//this help prevents clipping keeps him from going through things
+phy_bullet = true;
 //instance axis varibles 
 xaxis = 0;
 yaxis = 0;
@@ -265,6 +265,9 @@ if(state == scr_attack_state){
             <string>///set fixed rotation
 //so you do not spend around like a crazy person
 phy_fixed_rotation = true;
+
+//set the persitence
+persistent =true;
 </string>
           </argument>
         </arguments>

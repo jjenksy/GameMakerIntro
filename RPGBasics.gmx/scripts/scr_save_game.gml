@@ -9,11 +9,12 @@ if(!instance_exists(obj_player_stats))exit;
 //which is then used to access the data structure in all other ds_map functions. 
 var save_data = ds_map_create();
 
+//instance of the obj_player_stats to reference its varibles
 with(obj_player_stats){
     //save the data to the map and give it keys
     save_data[?"room"] = previous_room;
-    save_data[?"x"] = 0;
-    save_data[?"y"] = 0;
+    save_data[?"x"] = player_xstart;
+    save_data[?"y"] = player_ystart;
     save_data[?"hp"] = hp;
     save_data[?"maxhp"] = maxhp;
     save_data[?"stamina"] = stamina;
