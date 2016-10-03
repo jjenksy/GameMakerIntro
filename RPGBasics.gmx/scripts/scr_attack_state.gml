@@ -1,19 +1,19 @@
 ///scr_attack_state
 image_speed = .5;
-
+movement =ATTACK;
 //get the characthers current direction using a switch statement
 //check your current sprite index
-switch(sprite_index){
-    case spr_player_down:
+switch(face){
+    case DOWN:
         sprite_index = spr_player_attack_down;
         break;
-    case spr_player_up:
+    case UP:
         sprite_index = spr_player_attack_up;
         break;
-     case spr_player_right:
+     case RIGHT:
         sprite_index = spr_player_attack_right;
         break;
-     case spr_player_left:
+     case LEFT:
         sprite_index = spr_player_attack_left;
         break;
     

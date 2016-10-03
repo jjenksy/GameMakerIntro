@@ -1,7 +1,9 @@
 ///scr_move_state
 
-//if dash key is pressed set the state = to the dash_state
+// set the movement
+movement = MOVE;
 
+//if dash key is pressed set the state = to the dash_state
 //check if the dashkey is pressed and there is enough
 //stamina to dash
 if(obj_input.dash_key){
@@ -73,6 +75,7 @@ if(obj_input.xaxis == 0 && obj_input.yaxis == 0){
     len = 0;
 }else{
     len = spd;
+    //get the direction we are facing
     scr_get_face();
 }
 //get the hspd and vspd GML function that converts lenght and direction in horizatol speed
@@ -90,20 +93,4 @@ if(len == 0){
     image_index = 0;
 }
 
-    switch(face){
-        case RIGHT:
-        sprite_index = spr_player_right;
-        break;
-        case UP:
-        sprite_index = spr_player_up;
-        break;
-        case LEFT:
-        sprite_index = spr_player_left;
-        break;
-        case DOWN:
-        sprite_index = spr_player_down;
-        break;    
-    
-    
-    }
 

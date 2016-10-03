@@ -1,4 +1,5 @@
 ///scr_dash_state
+movement =MOVE;
 //gets the current facing direction and makes it proper 360 degrees
 if(len == 0){
     dir = face *90;
