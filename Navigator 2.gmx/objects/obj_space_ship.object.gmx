@@ -28,6 +28,27 @@
             <string>///init the ship
 //so it want spin like crazy
 phy_fixed_rotation = true;
+//image speed
+image_speed = 0;
+//this help prevents clipping keeps him from going through things
+phy_bullet = true;
+//instance axis varibles 
+xaxis = 0;
+yaxis = 0;
+//set the speed
+spd = 3;
+
+//assign script to state
+state= scr_move_state;
+//direction sprite is facing
+face = RIGHT;
+movement = MOVE;
+
+//two dimensional array grid system for sprite movement
+sprite[RIGHT,MOVE] = spr_move_right;
+sprite[UP,MOVE] = spr_move_up;
+sprite[LEFT,MOVE] = spr_move_left;
+sprite[DOWN,MOVE] = spr_move_down;
 
 
 </string>
@@ -54,29 +75,12 @@ phy_fixed_rotation = true;
             <kind>1</kind>
             <string>///movement for the ship
 
-if(keyboard_check_pressed(vk_up)){
-    //sprite_index = spr_move_up;
-    //This function applies a force to an instance at a position
-    // relative to its origin and with a strength and direction defined by a
-   physics_apply_local_force(0, 0, 0, -50);
-}
-if(keyboard_check_pressed(vk_down)){
-    //sprite_index = spr_move_down;
-     phy_position_y +=1;
+///Movement Code
+//runs the script assigned to state
 
-}
-if(keyboard_check_pressed(vk_left)){
-    //sprite_index = spr_move_left;
-     phy_position_x -=1;
+script_execute(state);
 
-}
-if(keyboard_check_pressed(vk_right)){
-    //sprite_index = spr_move_right;
-     phy_position_x +=1;
-      physics_apply_force(-25, 0, -100, 0);
-     // physics_apply_force(x,y,0,+spd*run)
-
-}
+sprite_index = sprite[face , movement];
 </string>
           </argument>
         </arguments>
