@@ -3,6 +3,7 @@ down_key =keyboard_check(vk_down);
 right_key = keyboard_check(vk_right)
 left_key = keyboard_check(vk_left);
 up_key =keyboard_check(vk_up);
+missle = keyboard_check(vk_space);
 
 
 //get the axis

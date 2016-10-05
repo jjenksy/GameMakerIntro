@@ -24,8 +24,19 @@ vspd = lengthdir_y(len,dir);
 phy_position_x += hspd;
 phy_position_y += vspd;
 
-//Control the sprite
-//image_speed = .2;
-//if(len == 0){
-  //  image_index = 0;
-//}
+//control projectile
+//missle key pressed
+if(obj_input.missle){
+    //create an instance of the projectile
+    var p = instance_create(x,y,obj_missle);
+    //Returns the horizontal x-component of the vector determined by the indicated length and direction
+    var xforce = lengthdir_x(20,face*90);
+    var yforce = lengthdir_y(20,face*90);
+    
+    p.creator = id;
+    
+    with(p){
+    //This function applies an impulse to a position in the room with a strength defined by a vector.
+    physics_apply_impulse(x,y,xforce,yforce);
+    }
+}
