@@ -27,11 +27,9 @@
             <kind>1</kind>
             <string>///init the ship
 //so it want spin like crazy
-phy_fixed_rotation = true;
+//phy_fixed_rotation = true;
 //image speed
 image_speed = 0;
-//this help prevents clipping keeps him from going through things
-phy_bullet = true;
 //instance axis varibles 
 xaxis = 0;
 yaxis = 0;
@@ -49,6 +47,7 @@ sprite[RIGHT,MOVE] = spr_move_right;
 sprite[UP,MOVE] = spr_move_up;
 sprite[LEFT,MOVE] = spr_move_left;
 sprite[DOWN,MOVE] = spr_move_down;
+
 
 
 </string>

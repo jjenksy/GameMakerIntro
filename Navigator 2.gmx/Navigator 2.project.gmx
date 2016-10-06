@@ -16,13 +16,22 @@
       <sprite>sprites\spr_move_right</sprite>
       <sprite>sprites\spr_move_left</sprite>
       <sprite>sprites\spr_move_up</sprite>
+      <sprite>sprites\spr_up_left</sprite>
+      <sprite>sprites\spr_down_left</sprite>
+      <sprite>sprites\spr_up_right</sprite>
+      <sprite>sprites\spr_down_right</sprite>
       <sprite>sprites\spr_move_down</sprite>
     </sprites>
     <sprite>sprites\spr_missle</sprite>
     <sprite>sprites\spr_big_asteroid</sprite>
+    <sprite>sprites\spr_asteroid_big</sprite>
   </sprites>
   <backgrounds name="background"/>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path_up_down</path>
+    <path>paths\path_left_right</path>
+    <path>paths\path_circle</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\scr_move_state.gml</script>
     <script>scripts\scr_get_face.gml</script>
@@ -34,6 +43,7 @@
     <object>objects\obj_input</object>
     <object>objects\obj_missle</object>
     <object>objects\obj_asteroid_parent</object>
+    <object>objects\obj_asteroid_big</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_space</room>
