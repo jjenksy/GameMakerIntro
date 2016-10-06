@@ -7,10 +7,14 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="space_ship_float">
-      <sprite>sprites\spr_space_ship_left</sprite>
-      <sprite>sprites\spr_space_ship_up</sprite>
-      <sprite>sprites\spr_space_ship_down</sprite>
-      <sprite>sprites\spr_space_ship_right</sprite>
+      <sprite>sprites\spr_space_ship_down_right_float</sprite>
+      <sprite>sprites\spr_space_ship_left_float</sprite>
+      <sprite>sprites\spr_space_ship_up_right_float</sprite>
+      <sprite>sprites\spr_space_ship_up_float</sprite>
+      <sprite>sprites\spr_space_ship_down_float</sprite>
+      <sprite>sprites\spr_space_ship_right_float</sprite>
+      <sprite>sprites\spr_space_up_left_float</sprite>
+      <sprite>sprites\spr_space_ship_down_left_float</sprite>
     </sprites>
     <sprites name="space_ship_move">
       <sprite>sprites\spr_move_right</sprite>

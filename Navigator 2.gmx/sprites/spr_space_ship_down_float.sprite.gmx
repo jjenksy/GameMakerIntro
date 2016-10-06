@@ -20,6 +20,6 @@
   <width>26</width>
   <height>42</height>
   <frames>
-    <frame index="0">images\spr_space_ship_down_0.png</frame>
+    <frame index="0">images\spr_space_ship_down_float_0.png</frame>
   </frames>
 </sprite>
