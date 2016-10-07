@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_explosion</sound>
+    <sound>sound\snd_missle</sound>
+    <sound>sound\snd_background</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="space_ship_float">
       <sprite>sprites\spr_space_ship_down_right_float</sprite>
@@ -29,6 +33,8 @@
     <sprite>sprites\spr_missle</sprite>
     <sprite>sprites\spr_big_asteroid</sprite>
     <sprite>sprites\spr_asteroid_big</sprite>
+    <sprite>sprites\spr_asteroid_small</sprite>
+    <sprite>sprites\spr_planet</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
@@ -47,7 +53,10 @@
     <object>objects\obj_input</object>
     <object>objects\obj_missle</object>
     <object>objects\obj_asteroid_parent</object>
-    <object>objects\obj_asteroid_big</object>
+    <object>objects\obj_circle_asteroid_big</object>
+    <object>objects\obj_verticle_asteroid</object>
+    <object>objects\obj_horizontal_asteroid</object>
+    <object>objects\obj_planet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_space</room>

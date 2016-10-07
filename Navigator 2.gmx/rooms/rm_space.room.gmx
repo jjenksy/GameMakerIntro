@@ -53,7 +53,10 @@
   <instances>
     <instance objName="obj_space_ship" x="224" y="160" name="inst_EA5F6F61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_input" x="96" y="192" name="inst_E433EC88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_asteroid_big" x="384" y="64" name="inst_69737A02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_circle_asteroid_big" x="384" y="64" name="inst_69737A02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_verticle_asteroid" x="384" y="256" name="inst_2A03D08A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_horizontal_asteroid" x="192" y="288" name="inst_1222205B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_planet" x="960" y="256" name="inst_8064699D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

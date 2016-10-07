@@ -33,6 +33,8 @@ movement = NOT_MOVING;
 //control projectile
 //missle key pressed
 if(obj_input.missle){
+//make sure a missle does not exist already
+    if(!instance_exists(obj_missle)){
     //create an instance of the projectile
     var p = instance_create(x,y,obj_missle);
     //Returns the horizontal x-component of the vector determined by the indicated length and direction
@@ -44,5 +46,7 @@ if(obj_input.missle){
     with(p){
     //This function applies an impulse to a position in the room with a strength defined by a vector.
     physics_apply_impulse(x,y,xforce,yforce);
+   
+    }
     }
 }

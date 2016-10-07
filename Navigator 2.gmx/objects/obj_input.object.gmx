@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,6 +28,23 @@
             <string>///Get the input
 scr_get_input();
 
+//play sound
+///sound_play(snd_background);
+//new sytem
+if !audio_is_playing(snd_background)
+   {
+audio_play_sound(snd_background, 0, true);
+}
+
+//create a varible for x and y
+if(instance_exists(obj_space_ship)){
+//get the spaceships start position
+    xx = obj_space_ship.x;
+    yy = obj_space_ship.y;
+
+
+}
+
 </string>
           </argument>
         </arguments>
@@ -50,8 +67,15 @@ scr_get_input();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Get the input
+            <string>///Get the input and  play sound
 scr_get_input();
+//if the space ship does not exist create it in its original start position
+if(!instance_exists(obj_space_ship)){
+    instance_create(xx,yy,obj_space_ship);
+
+
+}
+
 
 </string>
           </argument>
