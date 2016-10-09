@@ -83,7 +83,8 @@ menu_index = 0;
             <kind>1</kind>
             <string>///Control the menu
 if(alarm[0]&lt;=0){
-    if(obj_input.down_key){
+ //check if downkey is pressed or controller is press down
+    if(obj_input.down_key || obj_input.yaxis &gt; .5){
     //checking to see if the menu_index is less then the total length of the array
         if(menu_index&lt; array_length_1d(option)-1){
             menu_index++;
@@ -93,7 +94,8 @@ if(alarm[0]&lt;=0){
         alarm[0]=room_speed/6;
         
     }
-     if(obj_input.up_key){
+    //check if upkey is pressed or controller is pressed up
+     if(obj_input.up_key || obj_input.yaxis &lt; -.5){
         if(menu_index&gt; 0){
         menu_index--;
      

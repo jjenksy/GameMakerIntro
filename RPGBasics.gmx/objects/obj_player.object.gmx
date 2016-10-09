@@ -52,7 +52,7 @@ state= scr_move_state;
 face = RIGHT;
 movement = MOVE;
 //assign a weapon
-weapon = obj_sword;
+weapon_sprite = spr_sword;
 
 //two dimensional array grid system for sprite movement
 sprite[RIGHT,MOVE] = spr_player_right;

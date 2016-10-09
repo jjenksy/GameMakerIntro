@@ -21,9 +21,12 @@ switch(face){
 if(scr_animation_hit_frame(2)){
         //create a weapon instance 
         //the weapon is assigned in player obj
-    var attack_animation = instance_create(x,y,weapon);
+    var attack_animation = instance_create(x,y,obj_weapon_animation);
     attack_animation.dir = face*90;
     attack_animation.image_angle = (face*90) +45;
+    
+    //set the sprite
+    attack_animation.sprite_index = weapon_sprite;
 
 
 }
