@@ -34,8 +34,9 @@ spd = .5;
 state = scr_enemy_idle_state;
 alarm[0] = room_speed*irandom_range(2,5);
 sight = 64;
-targetx = 0;
-targety = 0;
+//axis to move to new axis AI movement system
+xaxis = 0;
+yaxis = 0;
 
 
 
@@ -63,7 +64,7 @@ targety = 0;
             <kind>1</kind>
             <string>///Drop expr point
 instance_create(x,y,obj_expr);
-
+audio_play_sound(snd_enemy_die,5,false);
 
 //drop random health pack
 if(scr_chance(.5)){

@@ -634,7 +634,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="9">
+    <constants number="10">
       <constant name="LOAD">2</constant>
       <constant name="NEW_ROOM">1</constant>
       <constant name="RETURN">0</constant>
@@ -644,6 +644,7 @@
       <constant name="DOWN">3</constant>
       <constant name="MOVE">0</constant>
       <constant name="ATTACK">1</constant>
+      <constant name="IDLE">2</constant>
     </constants>
   </ConfigConstants>
 </Config>

@@ -4,7 +4,12 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_enemy_die</sound>
+    <sound>sound\snd_expr</sound>
+    <sound>sound\snd_player_takes_damage</sound>
+    <sound>sound\snd_sword_attack</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_npc_right</sprite>
     <sprite>sprites\spr_wall</sprite>
@@ -30,6 +35,18 @@
     <sprites name="projectile">
       <sprite>sprites\spr_projectile</sprite>
     </sprites>
+    <sprites name="chinlin">
+      <sprite>sprites\spr_chinlin_run_down</sprite>
+      <sprite>sprites\spr_chinlin_run_up</sprite>
+      <sprite>sprites\spr_chinlin_stand_down</sprite>
+      <sprite>sprites\spr_chinlin_stand_up</sprite>
+      <sprite>sprites\spr_chinlin_run_right</sprite>
+      <sprite>sprites\spr_chinlin_stand_right</sprite>
+    </sprites>
+    <sprites name="weapon">
+      <sprite>sprites\spr_sword</sprite>
+      <sprite>sprites\spr_axe</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -43,6 +60,7 @@
       <script>scripts\scr_string_copy_words.gml</script>
       <script>scripts\scr_load_game.gml</script>
       <script>scripts\scr_save_game.gml</script>
+      <script>scripts\scr_animation_hit_frame.gml</script>
     </scripts>
     <scripts name="enemy_state">
       <script>scripts\scr_enemy_idle_state.gml</script>
@@ -52,6 +70,7 @@
       <scripts name="enemy_helper_scripts">
         <script>scripts\scr_check_for_player.gml</script>
         <script>scripts\scr_enemy_choose_next_state.gml</script>
+        <script>scripts\scr_move_axis.gml</script>
       </scripts>
     </scripts>
     <scripts name="playerStates">
@@ -69,6 +88,7 @@
     <object>objects\obj_view</object>
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_slime</object>
+    <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_damage</object>
     <object>objects\obj_expr</object>
     <object>objects\obj_health</object>
@@ -86,6 +106,8 @@
     <object>objects\obj_pause_menu</object>
     <object>objects\obj_npc</object>
     <object>objects\obj_projectile</object>
+    <object>objects\obj_weapon_animation_parent</object>
+    <object>objects\obj_sword</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>

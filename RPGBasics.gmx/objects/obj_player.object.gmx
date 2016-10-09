@@ -25,7 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//inherit events from parent
+            <string>///init the player
+
+//check to see how many players in room
+//if(instance_number(obj_player&gt;1)){
+   // instance_destroy();
+//}
+//inherit events from parent
 event_inherited();
 //speed variables
 spd =2;
@@ -33,7 +39,6 @@ hspd = 0;
 vspd = 0;
 len = 0;
 dir = 0;
-attacked = false;
 //image speed
 image_speed = 0;
 //this help prevents clipping keeps him from going through things
@@ -46,6 +51,8 @@ state= scr_move_state;
 //direction sprite is facing
 face = RIGHT;
 movement = MOVE;
+//assign a weapon
+weapon = obj_sword;
 
 //two dimensional array grid system for sprite movement
 sprite[RIGHT,MOVE] = spr_player_right;
@@ -176,6 +183,7 @@ if(room_exists(other.new_room)){
 // indicates all instances of this object are to run the code block
 with(other){
     instance_destroy();
+    audio_play_sound(snd_expr,6,false);
 }
 with(obj_player_stats){
 //add to players health
@@ -208,6 +216,7 @@ with(obj_player_stats){
 
 with(other){
     instance_destroy();
+    audio_play_sound(snd_expr,6,false);
 }
 with(obj_player_stats){
 //add 1 to expr

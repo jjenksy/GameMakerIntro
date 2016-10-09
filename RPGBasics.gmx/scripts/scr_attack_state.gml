@@ -18,7 +18,16 @@ switch(face){
         break;
     
 }
-if(image_index >=3 && attacked == false){
+if(scr_animation_hit_frame(2)){
+        //create a weapon instance 
+        //the weapon is assigned in player obj
+    var attack_animation = instance_create(x,y,weapon);
+    attack_animation.dir = face*90;
+    attack_animation.image_angle = (face*90) +45;
+
+
+}
+if(scr_animation_hit_frame(3)){
     var xx =0;
     var yy =0;
 
@@ -49,11 +58,12 @@ if(image_index >=3 && attacked == false){
     }
     //show_debug_message(xx);
    // show_debug_message(yy);
-
+   //play the audio
+    audio_play_sound(snd_sword_attack,8,false);
     var damage = instance_create(xx,yy,obj_damage);
     damage.creator = id;
     //set the damage objects damage variable = to player obj stat attack variable
     damage.damage =obj_player_stats.attack;
-    attacked = true;
+  
 }
 
