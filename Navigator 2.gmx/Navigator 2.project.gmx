@@ -8,6 +8,7 @@
     <sound>sound\snd_explosion</sound>
     <sound>sound\snd_missle</sound>
     <sound>sound\snd_background</sound>
+    <sound>sound\snd_landing</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="space_ship_float">
@@ -60,6 +61,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_space</room>
+    <room>rooms\rm_game_over</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

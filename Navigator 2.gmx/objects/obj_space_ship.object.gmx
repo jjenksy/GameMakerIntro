@@ -120,7 +120,10 @@ sprite_index = sprite[face , movement];
 sound_play(snd_explosion);
 //new sytem
 audio_play_sound(snd_explosion, 10, false);
-instance_destroy();
+with(obj_space_ship){
+    instance_destroy();
+}
+
 </string>
           </argument>
         </arguments>
