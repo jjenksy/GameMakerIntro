@@ -37,7 +37,11 @@
     <sprite>sprites\spr_asteroid_small</sprite>
     <sprite>sprites\spr_planet</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_stars</background>
+    <background>background\bg_small_stars</background>
+    <background>background\bg_white_start</background>
+  </backgrounds>
   <paths name="paths">
     <path>paths\path_up_down</path>
     <path>paths\path_left_right</path>

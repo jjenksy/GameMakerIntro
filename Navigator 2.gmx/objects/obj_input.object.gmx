@@ -67,7 +67,7 @@ if(instance_exists(obj_space_ship)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Get the input and  play sound
+            <string>///Get the input and  play sound and scroll background
 scr_get_input();
 //if the space ship does not exist create it in its original start position
 var roomname = room_get_name(room);
@@ -79,7 +79,12 @@ if(roomname != rm_game_over){
     }
 }
 
-
+if (background_vtiled[0] = true)
+   {
+   background_hspeed[0] = -2;
+    background_hspeed[1] = -3;
+    background_hspeed[2] = -4;
+   }
 </string>
           </argument>
         </arguments>
