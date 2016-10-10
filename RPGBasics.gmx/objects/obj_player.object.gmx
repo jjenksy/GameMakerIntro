@@ -33,6 +33,10 @@
 //}
 //inherit events from parent
 event_inherited();
+
+//setup the text to display above player
+//init the variables
+scr_init_text();
 //speed variables
 spd =2;
 hspd = 0;
@@ -116,8 +120,10 @@ state = scr_move_state;
 //custom script for key input
 //runs the script assigned to state
 
-script_execute(state);
 
+
+
+script_execute(state);
 sprite_index = sprite[face , movement];
 //overide parent events
 depth =-y;
@@ -189,7 +195,12 @@ with(obj_player_stats){
 //add to players health
     // prevent add value from going over the maxhp
     hp = min(hp+5, maxhp);
+    //show amount collected
+   
 }
+ scr_store_text(HEAL_COLOUR,5);
+
+
 </string>
           </argument>
         </arguments>
@@ -221,9 +232,13 @@ with(other){
 with(obj_player_stats){
 //add 1 to expr
     expr +=1;
+      //update screen text
+    
     //if expr is greater then level up
     if(expr &gt;= maxexpr){
     level +=1;
+    //level up display text
+   
     expr = expr -maxexpr;
     //takes double the expr every level
     maxexpr *=2;
@@ -233,9 +248,13 @@ with(obj_player_stats){
     maxstamina +=2;
     attack +=1;
     
+  
     
     }
 }
+//now that everything is done 
+// scr_store_text(obj_player.XP_COLOUR,1);
+//scr_store_text(obj_player.LVLUP_COLOUR, "Level "+ level +" reached");
 </string>
           </argument>
         </arguments>
@@ -291,6 +310,7 @@ phy_fixed_rotation = true;
 
 //set the persitence
 persistent =true;
+
 </string>
           </argument>
         </arguments>
@@ -313,10 +333,21 @@ persistent =true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw the shadow
+            <string>///draw the shadow and draw the text box
 draw_sprite(spr_player_shadow, image_index,x,y);
 //draw the sprite
 draw_self();
+
+
+//draw the text
+draw_set_halign(fa_center);
+if(show_text){
+    scr_show_text();
+}
+//draw the sprite
+draw_self();
+
+
 </string>
           </argument>
         </arguments>
@@ -340,8 +371,8 @@ draw_self();
           <argument>
             <kind>1</kind>
             <string>///set the frozen state
-state = scr_frozen_state;
-
+//state = scr_frozen_state;
+ scr_store_text(HEAL_COLOUR,5);
 
 </string>
           </argument>

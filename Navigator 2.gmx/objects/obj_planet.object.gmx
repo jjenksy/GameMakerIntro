@@ -52,6 +52,8 @@ image_speed = .1;
             <string>///end game
 //play sound
 audio_play_sound(snd_landing,10,false);
+//show custom message
+show_message("Great flying ace!!");
 //got tot the game over room
 room_goto(rm_game_over);
 //if the spaceship exist destroy it

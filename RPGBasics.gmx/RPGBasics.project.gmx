@@ -63,6 +63,9 @@
       <script>scripts\scr_save_game.gml</script>
       <script>scripts\scr_animation_hit_frame.gml</script>
       <script>scripts\scr_swap_weapons.gml</script>
+      <script>scripts\scr_store_text.gml</script>
+      <script>scripts\scr_show_text.gml</script>
+      <script>scripts\scr_init_text.gml</script>
     </scripts>
     <scripts name="enemy_state">
       <script>scripts\scr_enemy_idle_state.gml</script>
@@ -84,6 +87,7 @@
     </scripts>
     <script>scripts\scr_projectile_particle.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <objects name="objects">
     <object>objects\obj_life_form_parent</object>
     <object>objects\obj_player</object>

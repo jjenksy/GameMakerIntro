@@ -35,7 +35,6 @@ expr = 0;
 maxexpr = 3;
 attack =1;
 draw_set_colour(c_white);
-
 //save the players start position
 if(instance_exists(obj_player)){
     player_xstart = obj_player.x;
