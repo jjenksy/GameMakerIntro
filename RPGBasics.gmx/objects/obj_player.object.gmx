@@ -252,6 +252,9 @@ with(obj_player_stats){
     
     }
 }
+
+var text = "+"+string(1)+"xp";
+ scr_store_text(XP_COLOUR,text);
 //now that everything is done 
 // scr_store_text(obj_player.XP_COLOUR,1);
 //scr_store_text(obj_player.LVLUP_COLOUR, "Level "+ level +" reached");
@@ -344,8 +347,6 @@ draw_set_halign(fa_center);
 if(show_text){
     scr_show_text();
 }
-//draw the sprite
-draw_self();
 
 
 </string>

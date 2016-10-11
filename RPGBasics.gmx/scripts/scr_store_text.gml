@@ -8,7 +8,7 @@
 color = argument0;
 text = argument1;
 
-
+   draw_set_font(fnt_xp);
 current_alpha=1;
 
 switch(color){

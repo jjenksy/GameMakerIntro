@@ -87,7 +87,9 @@
     </scripts>
     <script>scripts\scr_projectile_particle.gml</script>
   </scripts>
-  <shaders name="shaders"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_xp</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_life_form_parent</object>
     <object>objects\obj_player</object>
