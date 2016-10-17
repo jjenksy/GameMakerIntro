@@ -36,11 +36,14 @@
     <sprite>sprites\spr_asteroid_big</sprite>
     <sprite>sprites\spr_asteroid_small</sprite>
     <sprite>sprites\spr_planet</sprite>
+    <sprite>sprites\sprite21</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_stars</background>
     <background>background\bg_small_stars</background>
     <background>background\bg_white_start</background>
+    <background>background\background3</background>
+    <background>background\Navigator_2</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_up_down</path>
@@ -56,14 +59,17 @@
   <objects name="objects">
     <object>objects\obj_space_ship</object>
     <object>objects\obj_input</object>
+    <object>objects\obj_intro</object>
     <object>objects\obj_missle</object>
     <object>objects\obj_asteroid_parent</object>
     <object>objects\obj_circle_asteroid_big</object>
     <object>objects\obj_verticle_asteroid</object>
     <object>objects\obj_horizontal_asteroid</object>
     <object>objects\obj_planet</object>
+    <object>objects\obj_game_over</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_intro</room>
     <room>rooms\rm_space</room>
     <room>rooms\rm_game_over</room>
   </rooms>
