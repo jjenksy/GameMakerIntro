@@ -63,9 +63,11 @@
       <script>scripts\scr_save_game.gml</script>
       <script>scripts\scr_animation_hit_frame.gml</script>
       <script>scripts\scr_swap_weapons.gml</script>
-      <script>scripts\scr_store_text.gml</script>
-      <script>scripts\scr_show_text.gml</script>
-      <script>scripts\scr_init_text.gml</script>
+      <scripts name="stats_text">
+        <script>scripts\scr_store_text.gml</script>
+        <script>scripts\scr_init_text.gml</script>
+        <script>scripts\scr_show_text.gml</script>
+      </scripts>
     </scripts>
     <scripts name="enemy_state">
       <script>scripts\scr_enemy_idle_state.gml</script>
@@ -89,6 +91,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_xp</font>
+    <font>fonts\font1</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_life_form_parent</object>
@@ -112,14 +115,23 @@
     </objects>
     <object>objects\obj_input</object>
     <object>objects\obj_pause_menu</object>
-    <object>objects\obj_npc</object>
     <object>objects\obj_projectile</object>
     <object>objects\obj_weapon_animation</object>
     <object>objects\obj_weapon_item</object>
+    <objects name="npc_quest_givers">
+      <object>objects\obj_npc</object>
+    </objects>
+    <objects name="grp_quest">
+      <object>objects\obj_quest</object>
+    </objects>
+    <objects name="obj_bosses">
+      <object>objects\obj_quest1_boss</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
     <room>rooms\rm_2</room>
+    <room>rooms\rm_3</room>
     <room>rooms\rm_pause</room>
   </rooms>
   <constants number="1">

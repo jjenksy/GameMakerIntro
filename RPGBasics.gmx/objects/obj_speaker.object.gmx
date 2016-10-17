@@ -32,10 +32,10 @@ dialog_page = 0;
 //offset for the dialog box
 xoffset = -32;
 yoffset = -40;
-//array of text
-text[0]="Warning slimes ahead!!";
-text[1]="Proceed with caution";
-text[2]="If you go you will surely die!!";
+
+text[0]="test 0";
+text[1]="test 1";
+text[2]="test 2";
 </string>
           </argument>
         </arguments>

@@ -36,4 +36,5 @@ if(gamepad_is_connected(0)){
    pause_key = gamepad_button_check_pressed(0,gp_start);
    swap_key = gamepad_button_check_pressed(0,gp_face4);
  
+ 
 }

@@ -33,7 +33,7 @@ text_count = 0;
 spd =.5;
 display_scale = display_get_gui_width()/view_wview[0];
 width = sprite_width*display_scale;
-margin = 8;
+margin = 1;
  
 
 </string>
@@ -64,7 +64,7 @@ if (string_char_at(text[text_page], text_count) ==" "){
     last_space = text_count;
 
 }
-//add smart returns
+//add smart returns, itterate through the array with text count
 var text_words = scr_string_copy_words(text[text_page], 1, text_count);
 if(string_width(text_words)&gt;=width-(margin*2)){
     //remove a space

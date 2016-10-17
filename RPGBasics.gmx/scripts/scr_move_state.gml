@@ -25,6 +25,11 @@ if(obj_input.dash_key){
                 dialog.text_count = 0;
                 //array_length_1d Returns the length of the first dimension of an array.
                 if(dialog.text_page > array_length_1d(dialog.text)-1){
+                //if there is a quest assign it
+                    if(quest == true){
+                        quest = false; 
+                        questActive = true;                   
+                    }
                     with(dialog){
                          instance_destroy();
                     }
