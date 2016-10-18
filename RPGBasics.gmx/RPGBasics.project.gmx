@@ -13,7 +13,6 @@
   <sprites name="sprites">
     <sprite>sprites\spr_npc_right</sprite>
     <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_enemy_slime</sprite>
     <sprites name="Player">
       <sprite>sprites\spr_player_attack_down</sprite>
       <sprite>sprites\spr_player_attack_right</sprite>
@@ -48,6 +47,10 @@
       <sprite>sprites\spr_axe</sprite>
     </sprites>
     <sprite>sprites\spr_items</sprite>
+    <sprites name="slimes">
+      <sprite>sprites\spr_enemy_slime</sprite>
+      <sprite>sprites\spr_enemy_boss</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -125,7 +128,7 @@
       <object>objects\obj_quest</object>
     </objects>
     <objects name="obj_bosses">
-      <object>objects\obj_quest1_boss</object>
+      <object>objects\obj_slime_king</object>
     </objects>
   </objects>
   <rooms name="rooms">
