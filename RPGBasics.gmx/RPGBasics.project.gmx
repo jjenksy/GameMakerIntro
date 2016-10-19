@@ -130,12 +130,16 @@
     <objects name="obj_bosses">
       <object>objects\obj_slime_king</object>
     </objects>
+    <objects name="menu">
+      <object>objects\obj_menu</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
     <room>rooms\rm_2</room>
     <room>rooms\rm_3</room>
     <room>rooms\rm_pause</room>
+    <room>rooms\rm_menu</room>
   </rooms>
   <constants number="1">
     <constant name="DASH_COST">5</constant>

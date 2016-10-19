@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,29 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Init the player stats
-hp = 5;
-maxhp = hp;
-stamina = 10;
-maxstamina = stamina;
-level = 1;
-expr = 0;
-maxexpr = 3;
-attack =1;
-draw_set_colour(c_white);
-//save the players start position
-if(instance_exists(obj_player)){
-    player_xstart = obj_player.x;
-    player_ystart = obj_player.y;
-}else{
-    player_xstart = obj_player.x;
-    player_ystart =0;
-}
-//save the prev room
-previous_room = room;
-//sets rsa var to NEW_ROOM Macro
-room_start_action = NEW_ROOM;
+            <string>///init the menu
+title = "Menu";
+option[0] = "Items";
+option[1] = "Equipment";
+option[2] = "Status";
 
+
+//menu index this is the option we are on
+menu_index = 0;
 </string>
           </argument>
         </arguments>
@@ -70,7 +56,7 @@ room_start_action = NEW_ROOM;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stamina regen alarm
+            <string>///alarm for the menu control
 </string>
           </argument>
         </arguments>
@@ -93,105 +79,54 @@ room_start_action = NEW_ROOM;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Control the stats
-//makes health not go negative
-if (hp&lt;0){
-    hp=0;
-
-}
-//stamina regen
-if(stamina &lt; maxstamina &amp;&amp; alarm[0]== -1){
-    stamina++;
-
-}
-
-//pause the game
- if(room != rm_menu){
-    if(obj_input.pause_key){
-        if(room != rm_pause){
-            if(instance_exists(obj_player)){
-                obj_player.persistent = false;           
-            
-            }
-            previous_room = room;
-            room_persistent = true;
-            room_goto(rm_pause);
-            
+            <string>///Control the menu
+if(alarm[0]&lt;=0){
+ //check if downkey is pressed or controller is press down
+    if(obj_input.down_key || obj_input.yaxis &gt; .5){
+    //checking to see if the menu_index is less then the total length of the array
+        if(menu_index&lt; array_length_1d(option)-1){
+            menu_index++;
         }else{
-           
-            room_goto(previous_room);
-        
+            menu_index=0;
         }
-        //so we dont get stuck in a loop
-        obj_input.pause_key = false;
+        alarm[0]=room_speed/6;
+        
     }
-}
-
-//got to menu
-if(room != rm_pause){
-    if(obj_input.swap_key){
-        if(room != rm_menu){
-            if(instance_exists(obj_player)){
-                obj_player.persistent = false;           
-            
-            }
-            previous_room = room;
-            room_persistent = true;
-            room_goto(rm_menu);
-            
+    //check if upkey is pressed or controller is pressed up
+     if(obj_input.up_key || obj_input.yaxis &lt; -.5){
+        if(menu_index&gt; 0){
+        menu_index--;
+     
+        
         }else{
-           
-            room_goto(previous_room);
+        //loop back around
+        menu_index= array_length_1d(option)-1;
+        }
         
-        }
-        //so we dont get stuck in a loop
-        obj_input.swap_key = false;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Rememeber the players start position
-//this has to be in rooms that are not levels but have the player_stats object in it
-if(room == rm_pause) exit;
-
-switch(room_start_action){
-    case RETURN:    
-        break;
-    case NEW_ROOM:
-    default:
-    if(instance_exists(obj_player)){
-        player_xstart = obj_player.x;
-        player_ystart = obj_player.y; 
-        }
-        break;
-    case LOAD:
-        scr_load_game();
-        break;
+         alarm[0]=room_speed/6;
+     }
+     if(obj_input.dash_key){
+        switch(menu_index){
+        
+            case 0:
+                  show_message("Case 0");
+                break;
+            case 1:
+                show_message("Case 1");
+                break;
+            case 2:
+                 show_message("Case 2");
+                break;
+            default:
+                break;
+                
+                }
+    
+                //so we dont dash when we return
+        obj_input.dash_key=false;
+     }
     
 }
-room_persistent =false;
-//reset the room start action
-room_start_action = NEW_ROOM;
 </string>
           </argument>
         </arguments>
@@ -214,12 +149,26 @@ room_start_action = NEW_ROOM;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the stats
-draw_text(32,16,"HP: "+string(hp) +"/"+ string(maxhp));
-draw_text(32,32,"Stamina: "+string(stamina) +"/"+ string(maxstamina));
-draw_text(32,42,"Level: " +string(level));
+            <string>///draw the menu
+var xx = display_get_gui_width()/2;
+var yy = display_get_gui_height()/2;
 
-///string(hp) +"/"+ string(maxhp)
+draw_set_halign(fa_center);
+
+draw_text(xx, yy-64,title);
+
+//loops through the array and draws the text
+for(var i = 0; i&lt;=array_length_1d(option)-1;i++){
+//draw menu as gray
+    draw_set_colour(c_gray);
+    if(i==menu_index){
+    //draw select as white
+        draw_set_colour(c_white);
+    }
+    draw_text(xx,yy+(i*32) , option[i]);
+}
+draw_set_colour(c_white);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>
