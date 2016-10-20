@@ -176,6 +176,7 @@ if(room == rm_pause) exit;
 
 switch(room_start_action){
     case RETURN:    
+        show_debug_message("obj_player_stats Room start switch statement for return.");
         break;
     case NEW_ROOM:
     default:
