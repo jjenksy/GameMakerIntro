@@ -76,6 +76,11 @@
     <instance objName="objWall" x="0" y="256" name="inst_0B7CE5E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWall" x="192" y="352" name="inst_1FB751B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objReward" x="32" y="160" name="inst_57000134" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGround" x="32" y="192" name="inst_9141B91F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGround" x="64" y="192" name="inst_17605AED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objGround" x="96" y="192" name="inst_B3FBF670" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="32" y="224" name="inst_DB93D3B8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWall" x="64" y="224" name="inst_3F31715F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="448" y="32" w="32" h="32" xo="274" yo="172" id="10000059" name="tile_F55FCFBD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
