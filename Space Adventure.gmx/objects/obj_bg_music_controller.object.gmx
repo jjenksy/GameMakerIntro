@@ -26,6 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///change music based on room
+
+
+if (audio_system() == audio_old_system)
+   {
+   global.SS = false;
+   }
+else
+   {
+   global.SS = true;
+   }
+if(global.SS){
 if(room == rm_title_screen){   
     if !audio_is_playing(snd_title)
     {
@@ -34,6 +45,19 @@ if(room == rm_title_screen){
 }
 else{
     audio_stop_sound(snd_title);
+
+}
+
+
+}else{
+        if(room == rm_title_screen){  
+            if (!sound_isplaying(snd_title))
+               {
+                  sound_loop(snd_title);
+               }
+        }else{
+             sound_stop(snd_title);
+        }
 
 }
 </string>
