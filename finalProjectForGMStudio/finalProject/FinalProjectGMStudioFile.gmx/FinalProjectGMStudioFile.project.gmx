@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd__backGround</sound>
+    <sound>sound\snd_dialog</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprDoorSmall</sprite>
     <sprite>sprites\sprDoorBig</sprite>
@@ -15,16 +18,26 @@
     <sprite>sprites\spr_other_npc</sprite>
     <sprite>sprites\sprItem</sprite>
     <sprite>sprites\spr_invisible</sprite>
+    <sprite>sprites\sprButton_direcrtion</sprite>
+    <sprite>sprites\spr_restartButton</sprite>
+    <sprite>sprites\spr_end_button</sprite>
+    <sprite>sprites\spr_dir_hover</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\cityTiles</background>
     <background>background\grass</background>
     <background>background\background2</background>
+    <background>background\background4</background>
+    <background>background\bg_gameOver</background>
+    <background>background\bg_directions</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pathGaurd</path>
     <path>paths\pathPond</path>
   </paths>
+  <scripts name="scripts">
+    <script>scripts\scr_get_input.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\objDoorSmall</object>
     <object>objects\objDoorBig</object>
@@ -36,11 +49,19 @@
     <object>objects\objBarrel1</object>
     <object>objects\obj_lifeform_parent</object>
     <object>objects\obj_gaurd</object>
+    <object>objects\obj_barrel_quest</object>
+    <object>objects\obj_quest_complet</object>
+    <object>objects\obj_teleport</object>
+    <object>objects\obj_interact_parent</object>
+    <object>objects\obj_title_button</object>
+    <object>objects\obj_endGame</object>
+    <object>objects\obj_restart</object>
+    <object>objects\obj_bgMusic</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\city</room>
     <room>rooms\titleScreen</room>
     <room>rooms\instructions</room>
+    <room>rooms\city</room>
     <room>rooms\gameOver</room>
   </rooms>
   <help>
