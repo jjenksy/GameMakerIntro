@@ -35,8 +35,7 @@ if(scr_animation_hit_frame(3)){
     var yy =0;
 
    
-    //show_debug_message(sprite_index);
-    //show_debug_message(spr_player_attack_down);
+  
       switch(sprite_index){
         case spr_player_attack_down:
             xx=x;
@@ -59,8 +58,7 @@ if(scr_animation_hit_frame(3)){
             break;
         
     }
-    //show_debug_message(xx);
-   // show_debug_message(yy);
+   
    //play the audio
     audio_play_sound(snd_sword_attack,8,false);
     var damage = instance_create(xx,yy,obj_damage);

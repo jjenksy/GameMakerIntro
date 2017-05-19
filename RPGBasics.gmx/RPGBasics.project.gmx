@@ -14,15 +14,17 @@
     <sprite>sprites\spr_npc_right</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprites name="Player">
-      <sprite>sprites\spr_player_attack_down</sprite>
-      <sprite>sprites\spr_player_attack_right</sprite>
-      <sprite>sprites\spr_player_attack_up</sprite>
-      <sprite>sprites\spr_player_attack_left</sprite>
       <sprite>sprites\spr_player_up</sprite>
       <sprite>sprites\spr_player_right</sprite>
       <sprite>sprites\spr_player_left</sprite>
       <sprite>sprites\spr_player_shadow</sprite>
       <sprite>sprites\spr_player_down</sprite>
+      <sprites name="attack">
+        <sprite>sprites\spr_player_attack_down</sprite>
+        <sprite>sprites\spr_player_attack_up</sprite>
+        <sprite>sprites\spr_player_attack_left</sprite>
+        <sprite>sprites\spr_player_attack_right</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_expr</sprite>
@@ -60,6 +62,7 @@
   <scripts name="scripts">
     <scripts name="helper_script">
       <script>scripts\scr_get_input.gml</script>
+      <script>scripts\scr_get_face_dash.gml</script>
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_chance.gml</script>
       <script>scripts\scr_string_copy_words.gml</script>
@@ -87,7 +90,6 @@
     <scripts name="playerStates">
       <script>scripts\scr_frozen_state.gml</script>
       <script>scripts\scr_attack_state.gml</script>
-      <script>scripts\scr_move_state_OLD.gml</script>
       <script>scripts\scr_move_state.gml</script>
       <script>scripts\scr_dash_state.gml</script>
     </scripts>

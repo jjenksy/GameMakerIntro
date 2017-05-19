@@ -34,6 +34,7 @@ level = 1;
 expr = 0;
 maxexpr = 3;
 attack =1;
+dash_attack =0.5;
 draw_set_colour(c_white);
 //save the players start position
 if(instance_exists(obj_player)){
@@ -176,7 +177,7 @@ if(room == rm_pause) exit;
 
 switch(room_start_action){
     case RETURN:    
-        show_debug_message("obj_player_stats Room start switch statement for return.");
+        
         break;
     case NEW_ROOM:
     default:

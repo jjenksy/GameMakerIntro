@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///init the player
-
+///Set fixed rotation
+phy_fixed_rotation = true;
 //check to see how many players in room
 //if(instance_number(obj_player&gt;1)){
    // instance_destroy();

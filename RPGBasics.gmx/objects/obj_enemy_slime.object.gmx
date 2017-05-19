@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>///Init the slime
 //inherit events from parent
+///Set fixed rotation
+phy_fixed_rotation = true;
 event_inherited();
 image_speed = .1;
 spd = .5;
